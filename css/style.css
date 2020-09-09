@@ -6,3 +6,160 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+* {
+margin:0;
+padding:0;
+box-sizing: border-box;
+font-family: Lato;
+font-weight: 400;
+}
+
+html{
+    font-size:62.5%;
+}
+
+
+body{
+    margin:2rem;
+}
+
+.header{
+    height: 95vh;
+    background-image:linear-gradient(to right bottom,#55c57acc,#28b485cc), url(../img/hero.jpg);
+    background-size: cover;
+    clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
+}
+
+.header__logo-box{
+position: absolute;
+top:4rem;
+left:4rem;
+}
+
+.header__logo{
+height: 3.5rem;
+}
+
+.header__text-box{
+color:white;
+text-transform: uppercase;
+line-height: 1.5;
+position: absolute;
+top:40%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align: center;
+}
+
+.header-text{
+    text-align: left;
+}
+
+.header-text-h1{
+display: block;
+font-size: 6rem;
+letter-spacing: 3.5rem;
+animation: moveinLeft 1s;
+}
+
+.header-text-p{
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.22rem;
+    animation: moveinRight 1s;
+    margin-bottom: 50px;
+}
+
+@keyframes moveinLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveinRight{
+    0%{
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveheaderButton{
+    0%{
+        opacity: 0;
+        transform: translateY(8rem);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.btn:link,.btn:visited{
+    text-decoration: none;
+    padding:1.5rem 3rem;
+    display: inline-block;
+    font-weight: 700;
+    border-radius: 3rem;
+    font-size: 1.7rem;
+    transition:all 0.2s;
+    position: relative;
+    
+}
+
+.background-white{
+    background-color: white;
+    color: #777777;
+}
+
+.btn:hover{
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active{
+    transform: translateY(.1rem);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn::after{
+    content:"";
+    display:inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 6rem;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+    transition:all 0.4s;
+}
+
+.background-white::after{
+    background-color: white;
+    color: #777777;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated{
+    animation:moveheaderButton 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+}
